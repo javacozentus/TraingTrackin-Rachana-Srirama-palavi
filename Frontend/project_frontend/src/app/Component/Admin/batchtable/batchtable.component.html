@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="mat-elevation-z8" style="margin-top: 20px; box-shadow: none">
+    <table mat-table [dataSource]="dataSource" class="mat-table" *ngIf="table1">
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+ 
+        <td mat-cell *matCellDef="let element">
+          <span
+            class="circle"
+            style="border-radius: 50%; height: 150px; width: 150px"
+          >
+            <button style="border: none; border-radius: 50%">
+              <img
+                src="../../assets/images/drop.png"
+                style="width: 15px; height: 15px; opacity: 0.4"
+                alt=""
+              />
+            </button>
+          </span>
+ 
+          <button (click)="addBatchData()" *ngIf="ischeck">
+            <img src="../../../../assets/images/check.png" alt="" />
+          </button>
+ 
+          <button (click)="removeall()" *ngIf="iscross">
+            <img src="../../../../assets/images/cross.png" alt="" />
+          </button>
+         
+            <button (click)="edittable1(element)" *ngIf="isedit" >
+              <img src="../../assets/images/pencil (2).png" alt="" />
+            </button>
+           
+              <button (click)="deletetable1(element)" *ngIf="isdelete">
+            <img src="../../assets/images/bin.png" alt="" />
+          </button>
+          <button (click)="secondtable()" [disabled]="isdisabled">
+            <img src="../../assets/images/plus.png"  alt="" />
+          </button>
+          {{ element.Actions }}
+         
+        </td>
+        </ng-container>
+     
+ 
+      <ng-container matColumnDef="Code">
+        <th mat-header-cell *matHeaderCellDef>Batch Code</th>
+ 
+        <td mat-cell *matCellDef="let element">
+          <input
+            type="text"
+            *ngIf="var1"
+            name="batchcode"
+            id="batchcode"
+            style="width: 120px"
+            placeholder="enter code"
+            [(ngModel)]="batchcode"
+          />
+          <p *ngIf="var4">{{ batchcode }}</p>
+          {{ element.Code }}
+        </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="CourseName">
+        <th mat-header-cell *matHeaderCellDef>Batch Name</th>
+ 
+        <td mat-cell *matCellDef="let element">
+          <input
+            type="text"
+            *ngIf="var2"
+            name="batchname"
+            id="batchname"
+            style="width: 120px"
+            placeholder="enter course name"
+            [(ngModel)]="batchname"
+          />
+          <p *ngIf="var5">{{ batchname }}</p>
+          {{ element.CourseName }}
+        </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="BatchStart">
+        <th mat-header-cell *matHeaderCellDef>Batch Start Name</th>
+ 
+        <!-- <td mat-cell *matCellDef="let element"> <input type="text" name="BatchStart" id="" style="width: 120px;" placeholder="enter course name"  > {{element.BatchStart}} </td> -->
+ 
+        <td mat-cell *matCellDef="let element">
+          <mat-form-field *ngIf="var3" appearance="fill">
+            <input
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Choose a date"
+              (dateChange)="onDateChange($event)"
+              name="batchstartdate"
+            />
+ 
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+ 
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+ 
+          <p *ngIf="var6">{{ selectedDate }}</p>
+        </td>
+      </ng-container>
+ 
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+ 
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <div style="margin-left: 100px">
+      <ng-container #container4></ng-container>
+    </div>
+  </div>
+</div>
+ 

@@ -1,0 +1,285 @@
+body{
+
+    height: 100vh;
+
+    width: 100%;
+
+    margin: 0;
+
+    overflow: auto;
+
+}
+
+.content{
+
+    height: auto;
+
+    width: 100%;
+
+    position: absolute;
+
+    background-color: rgb(255, 255, 255);
+
+}
+
+.course-form {
+
+    width: 96%;
+
+    height: auto;
+
+    background-color: rgb(247, 254, 255);
+
+    position: absolute;
+
+    top: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+  }
+
+  .course-form1 {
+
+    width: 96%;
+
+    height: auto;
+
+    background-color: rgb(247, 254, 255);
+
+    position: absolute;
+
+    top: 100px;
+
+    margin-left: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+  }
+
+ 
+
+  .popup {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+  }
+
+ 
+
+  .popup-content {
+
+    background-color:black;
+
+    padding: 20px;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+  }
+
+ 
+
+.horizontal-table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+}
+
+ 
+
+.horizontal-table th, .horizontal-table td {
+
+  padding: 10px;
+
+  text-align: center;
+
+  border: 1px solid #ddd;
+
+}
+
+ 
+
+.horizontal-table th {
+
+  background-color: #f2f2f2;
+
+  font-weight: 600;
+
+}
+
+ 
+
+.mat-icon-main {
+
+  vertical-align: middle;
+
+  cursor: pointer;
+
+}
+
+ 
+
+.custom-table {
+
+  width: 100%;
+
+}
+
+ 
+
+.custom-table th,
+
+.custom-table td {
+
+  padding: 10px;
+
+  text-align: center;
+
+}
+
+ 
+
+.custom-table th {
+
+  background-color: rgba(248,251,255,255);
+
+  font-weight: bold;
+
+}
+
+ 
+
+.custom-table tr:nth-child(even) {
+
+  background-color: rgba(248,251,255,255);
+
+}
+
+ 
+
+.custom-table tr:nth-child(odd) {
+
+  background-color: rgba(248,251,255,255);
+
+}
+
+ 
+
+/* Apply custom styles to the table */
+
+table {
+
+  width: 100%;
+
+}
+
+ 
+
+/* Style the table header (thead) */
+
+thead {
+
+  background-color: rgba(248,251,255,255); /* Background color for the header */
+
+}
+
+ 
+
+/* Style the table header cells (th) */
+
+th {
+
+  padding: 10px; /* Add padding to the header cells */
+
+  text-align: left; /* Align text to the left within header cells */
+
+}
+
+ 
+
+/* Style the table body cells (td) */
+
+td {
+
+  padding: 10px; /* Add padding to the body cells */
+
+}
+
+ 
+
+/* Apply a background color to alternate rows for better readability */
+
+tbody tr:nth-child(odd) {
+
+  background-color: rgba(248,251,255,255);
+
+}
+
+ 
+
+/* Style the icons within the cells (adjust padding and alignment as needed) */
+
+.mat-icon-main {
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  vertical-align: middle; /* Align icon vertically in the cell */
+
+}
+
+/* Add a custom CSS class to target the mat-icons */
+
+.small-icon {
+
+  font-size: 10px; /* Adjust the font size as needed */
+
+}
+
+ 
+
+.content {
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+.refresh-button {
+
+  background: none;
+
+  border: none;
+
+  cursor: pointer;
+
+  margin-left: auto;
+
+  margin-right: 35px;
+
+}

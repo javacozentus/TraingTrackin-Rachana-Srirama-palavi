@@ -1,0 +1,113 @@
+<body style="background-color: rgba(238,244,251,255);">
+  <div class="col-6"></div>
+
+  <div style="margin-left:1000px; margin-top: 10px;">
+
+    <button style="margin-left: 300px; background-color: white; " matTooltip="Refresh" mat-icon-button
+      (click)="refreshMethod()"><mat-icon>refresh</mat-icon>
+
+    </button>
+
+  </div>
+
+  <!-- </div> -->   
+ 
+
+  <div class="content" style="margin-top: 10px;">
+    <div style="width: 100%; height: 130px; background-color:  rgba(255,255,255,255);
+      position: relative; top: 15px; border-radius: 5px; display: flex; justify-content: space-evenly;">
+      <div>
+        <input type="text" placeholder="Search"
+          style="width: 280px; height: 15px; position: absolute; left: 20px; top: 15px;
+                  border: 1px solid black; border-radius: 5px; padding: 13px; font-size: 15px; font-family: sans-serif;">
+        <button
+          style="position: absolute; right: 20px; top: 15px; padding: 6px; margin-top: 3px; width: 140px; height: 40px; border-radius: 5px; background-color: rgba(255,255,255,255)"
+          (click)="toggleForm()" *ngIf="var2">Add Student</button>
+         
+      </div>
+      <div style="position: absolute;bottom: 0;left: 30px;margin-bottom: 10px;width: 91%; height: 36px;" *ngIf="var1">
+        <span style="color: black;font-size: 15px;font-family: sans-serif;font-weight: 750;">Please add a student
+          to see content</span>
+          
+      </div>
+
+      <div *ngIf="isFormVisible" class="course-form">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>
+                Student Code
+                <mat-icon style="vertical-align: middle; margin-left: 1px;">unfold_more</mat-icon>
+              </th>
+              <th>
+                Student Name
+                <mat-icon style="vertical-align: middle; margin-left: 1px;">unfold_more</mat-icon>
+              </th>
+              <th>
+                Email ID
+                <mat-icon style="vertical-align: middle; margin-left: 1px;">unfold_more</mat-icon>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <mat-icon class="mat-icon-main" svgIcon="Check-up" (click)="submitTableData(); toggleForm1();"
+                  aria-hidden="false" aria-label="Toggle Password Visibility"></mat-icon>
+                <mat-icon class="mat-icon-main" svgIcon="Wrong-up" (click)="toggleForm1()" aria-hidden="false"
+                  aria-label="Toggle Password Visibility"></mat-icon>
+              </td>
+              <td><input type="text" style="width: 180px; height: 30px" [(ngModel)]="field1Value" name="studentCode"
+                  placeholder="Enter Student Code"  [disabled]="isDisabled" ></td>
+              <td><input type="text" style="width: 180px; height: 30px" [(ngModel)]="field2Value" name="studentName"
+                  placeholder="Enter Student Name"  [disabled]="isDisabled" ></td>
+              <td><input type="text" style="width: 180px; height: 30px" [(ngModel)]="field3Value" name="studentEmail"
+                  placeholder="Enter Email ID"  [disabled]="isDisabled" ></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Paginator for Form Table-->
+        <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page"></mat-paginator>
+      </div>
+    </div>
+
+    <div *ngIf="isForm2Visible" class="course-form1" style="margin-top: 140px;">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>
+              Student Code
+              <mat-icon style="vertical-align: middle; margin-left: 1px;">unfold_more</mat-icon>
+            </th>
+            <th>
+              Student Name
+              <mat-icon style="vertical-align: middle; margin-left: 1px;">unfold_more</mat-icon>
+            </th>
+            <th>
+              Email ID
+              <mat-icon style="vertical-align: middle; margin-left: 1px;">unfold_more</mat-icon>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of studentApi; let i = index">
+            <td>
+              <mat-icon class="mat-icon-main small-icon" svgIcon="Edit-up" (click)="editRow(person)"
+                aria-hidden="false" aria-label="Toggle Password Visibility"></mat-icon>
+              <mat-icon class="mat-icon-main small-icon" svgIcon="Del-up" (click)="deleteItem(i)" aria-hidden="false"
+                aria-label="Toggle Password Visibility"></mat-icon>
+            </td>
+            <td>{{ person.studentCode }}</td>
+            <td>{{ person.studentName }}</td>
+            <td>{{ person.studentEmail }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"></mat-paginator>
+    </div>
+  </div>
+</body>

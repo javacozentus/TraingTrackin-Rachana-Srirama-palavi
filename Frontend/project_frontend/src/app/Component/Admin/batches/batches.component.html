@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+
+  <div class="content">
+    <div class="row">
+      <div class="col-3">
+        <h4 style="margin-left: 20px; margin-top: 15px">Batch</h4>
+      </div>
+
+      <div class="col-6"></div>
+    </div>
+
+    <div
+      class="container"
+      style="
+        background-color: rgba(255, 255, 255, 255);
+        width: 100%;
+        height: auto;
+      "
+    >
+      <div class="row">
+        <div class="col-3" style="margin-top: 15px">
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+
+        <div class="col-7"></div>
+
+        <div class="col-2" style="margin-top: 15px">
+          <button
+            mat-stroked-button
+            style="
+              background-color: transparent;
+              color: rgb(0, 0, 0);
+              border-color: black;
+            "
+            (click)="onAddBatch()"
+          >
+            Add Batch
+          </button>
+        </div>
+      </div>
+      <br />
+
+      <div class="content">
+        <ng-container #container3></ng-container>
+      </div>
+
+      <mat-paginator
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+
+  <!-- </body> -->
+</html>
